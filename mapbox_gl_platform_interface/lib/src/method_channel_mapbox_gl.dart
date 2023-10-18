@@ -144,7 +144,7 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
       final useHybridCompositionParam =
           (creationParams['useHybridCompositionOverride'] ??
               useHybridComposition) as bool;
-      if (useHybridCompositionParam) {
+      // if (useHybridCompositionParam) {
         return PlatformViewLink(
           viewType: 'plugins.flutter.io/mapbox_gl',
           surfaceFactory: (
@@ -179,14 +179,14 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
             return controller;
           },
         );
-      } else {
-        return AndroidView(
-          viewType: 'plugins.flutter.io/mapbox_gl',
-          onPlatformViewCreated: onPlatformViewCreated,
-          gestureRecognizers: gestureRecognizers,
-          creationParams: creationParams,
-          creationParamsCodec: const StandardMessageCodec(),
-        );
+      // } else {
+      //   return AndroidView(
+      //     viewType: 'plugins.flutter.io/mapbox_gl',
+      //     onPlatformViewCreated: onPlatformViewCreated,
+      //     gestureRecognizers: gestureRecognizers,
+      //     creationParams: creationParams,
+      //     creationParamsCodec: const StandardMessageCodec(),
+      //   );
       }
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       return UiKitView(
